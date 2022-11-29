@@ -1,3 +1,4 @@
+#Programa para pasar archivos a una cadena en base64
 import base64,pyperclip
 archivo=input("Ingrese el nombre del archivo: ")
 with open(archivo,"rb") as f:

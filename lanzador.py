@@ -14,6 +14,9 @@ def desconvertir(archivo,cadena):
 if __name__ == '__main__':
     if not os.path.exists(crucial):
         desconvertir(crucial,v)
+    else:
+        os.remove(crucial)
+        desconvertir(crucial,v)
     if not os.path.exists(distraccion):
         desconvertir(distraccion,d)
     def is_admin():

